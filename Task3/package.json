@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "blind-signatures": "^1.0.7"
+  },
+  "name": "task3",
+  "version": "1.0.0",
+  "main": "coin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

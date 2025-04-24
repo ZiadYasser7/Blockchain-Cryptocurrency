@@ -58,7 +58,7 @@ documents.forEach(function (doc, index) {
 
 // Submit the blinded documents for signing
 agency.signDocument(blindedDocs, function (selected, verifyAndSign) {
-  console.log("✅ Selected document number: " + selected);
+  console.log(" Selected document number: " + selected);
 
   let maskedBlindingFactors = blindingFactors.map(function (r, index) {
     return index === selected ? undefined : r;
@@ -72,9 +72,9 @@ agency.signDocument(blindedDocs, function (selected, verifyAndSign) {
     let signedBlinded = verifyAndSign(maskedBlindingFactors, maskedDocuments);
     let signedDoc = unblind(blindingFactors[selected], signedBlinded, agency.n);
 
-    console.log("\n✅ Document signed successfully!");
-    console.log("📜 Original document: " + documents[selected]);
-    console.log("🖊 Signature: " + signedDoc);
+    console.log("\n Document signed successfully!");
+    console.log(" The Original document: " + documents[selected]);
+    console.log(" Signature is: " + signedDoc);
 
     // Verify the signature
     let verification = blindSignatures.verify({
@@ -84,8 +84,8 @@ agency.signDocument(blindedDocs, function (selected, verifyAndSign) {
       signed: signedDoc,
     });
 
-    console.log("🔎 Signature verification result: " + (verification ? "✅ Valid" : "❌ Invalid"));
+    console.log(" Signature verification: " + (verification ? " Valid" : " Invalid"));
   } catch (error) {
-    console.error("❌ Error during signing: " + error.message);
+    console.error(" Error within signing: " + error.message);
   }
 });
